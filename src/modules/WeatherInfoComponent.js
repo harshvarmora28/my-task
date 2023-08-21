@@ -14,7 +14,7 @@ const Location = styled.span`
   text-transform: capitalize;
   font-size: 28px;
   font-weight: bold;
-  color: rgb(255, 225, 0);
+  color: rgb(255, 179, 0);
 `;
 const Condition = styled.span`
   margin: 20px auto;
@@ -77,12 +77,14 @@ const InfoIcon = styled.img`
 const InfoLabel = styled.span`
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: 18px;
   margin: 15px;
   & span {
     font-size: 12px;
     text-transform: capitalize;
+    font-weight: normal;
   }
+  font-weight: bold;
   color: black;
 `;
 
@@ -108,7 +110,8 @@ const WeatherComponent = (props) => {
         <>
             <WeatherContainer>
                 <Condition>
-                    <span>{`${Math.floor(weather?.main?.temp - 273)}°C`}</span>
+                    <span>{`${Math.floor(weather?.main?.temp - 273)}`}</span>
+                    <span style={{color: "rgb(255, 179, 0)", fontSize: "30px"}}> °C</span>
                     <br/>
                     {`${weather?.weather[0].description}`}
                 </Condition>
