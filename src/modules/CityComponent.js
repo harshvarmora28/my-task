@@ -30,7 +30,7 @@ const SearchBox = styled.form`
   }
 `;
 const ChooseCityLabel = styled.span`
-  color: black;
+  color: white;
   margin: 10px auto;
   font-size: 18px;
   font-weight: bold;
@@ -44,7 +44,7 @@ const CityComponent = (props) => {
   const { updateCity, fetchWeather } = props;
   return (
     <>
-      <WelcomeWeatherLogo src={"/react-weather-app/icons/perfect-day.svg"} />
+      <WelcomeWeatherLogo src={"/react-weather-app/icons/sun.png"} />
       <ChooseCityLabel>Find Weather of your city</ChooseCityLabel>
       <SearchBox onSubmit={fetchWeather}>
         <input

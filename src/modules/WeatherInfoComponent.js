@@ -14,14 +14,19 @@ const Location = styled.span`
   text-transform: capitalize;
   font-size: 28px;
   font-weight: bold;
+  color: rgb(255, 225, 0);
 `;
 const Condition = styled.span`
   margin: 20px auto;
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 10px;
   & span {
-    font-size: 28px;
+    font-size: 56px;
+    color: white;
+    font-weight: bold;
   }
+  font-weight: semi-bold;
+  color: grey;
 `;
 const WeatherInfoLabel = styled.span`
   margin: 20px 25px 10px;
@@ -30,6 +35,7 @@ const WeatherInfoLabel = styled.span`
   width: 90%;
   font-weight: bold;
   font-size: 14px;
+  color: white;
 `;
 const WeatherIcon = styled.img`
   width: 100px;
@@ -52,6 +58,10 @@ const WeatherInfoContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  background: white;
+  border-radius: 30px;
+  margin-top: 16px;
+  box-shadow: 0 3px 6px 0 #0f0f0f;
 `;
 const InfoContainer = styled.div`
   display: flex;
@@ -73,6 +83,7 @@ const InfoLabel = styled.span`
     font-size: 12px;
     text-transform: capitalize;
   }
+  color: black;
 `;
 
 const WeatherInfoComponent = (props) => {
@@ -98,7 +109,8 @@ const WeatherComponent = (props) => {
             <WeatherContainer>
                 <Condition>
                     <span>{`${Math.floor(weather?.main?.temp - 273)}°C`}</span>
-                    {`  |  ${weather?.weather[0].description}`}
+                    <br/>
+                    {`${weather?.weather[0].description}`}
                 </Condition>
                 <WeatherIcon src={WeatherIcons[weather?.weather[0].icon]}/>
             </WeatherContainer>
